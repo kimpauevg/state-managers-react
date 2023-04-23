@@ -3,23 +3,24 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div>
+          <button>
+              Рендеринг списка
+          </button>
+          <button>
+              Рендеринг списка и одновременная обработка большого объема данных
+          </button>
+          <button>
+              Рендеринг матрицы 20x20
+          </button>
+          <button>
+              Рендеринг матрицы 100x100
+          </button>
+          <button>
+              Рендеринг матрицы 100x100
+          </button>
+      </div>
+      );
 }
 
 export default App;
