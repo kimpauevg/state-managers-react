@@ -1,8 +1,0 @@
-{
-  "plugins": [
-    ["@babel/plugin-proposal-decorators"]
-  ],
-  "assumptions": {
-    "setPublicClassFields": false
-  }
-}

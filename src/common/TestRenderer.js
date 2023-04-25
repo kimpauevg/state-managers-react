@@ -1,6 +1,7 @@
 import React from "react";
 import HookList from "../react-hooks/list";
 import MobxList from "../mobx/list";
+import ReduxList from "../redux/list"
 
 const hookComponents = {
     list: HookList
@@ -10,9 +11,13 @@ const mobxComponents = {
     list: MobxList
 }
 
+const reduxComponents = {
+    list: ReduxList
+}
 const components = {
     hook: hookComponents,
-    mobx: mobxComponents
+    mobx: mobxComponents,
+    redux: reduxComponents,
 }
 
 export default block => {

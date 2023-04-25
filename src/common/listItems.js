@@ -1,6 +1,6 @@
 const listItems = ['apple', 'banana', 'carrot', 'donkey', 'elk']
     .join(',')
-    .repeat(50)
+    .repeat(500)
     .split(',')
     .map(function (item, i) {
         return item + i;

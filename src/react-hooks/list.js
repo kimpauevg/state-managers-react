@@ -5,7 +5,12 @@ function List() {
     const [items, setItems] = useState([]);
 
     function addAll() {
-        setItems(listItems)
+        let allItems = [];
+
+        for (let item of listItems) {
+            allItems = allItems.concat([item]);
+            setItems(allItems)
+        }
     }
 
     return (
