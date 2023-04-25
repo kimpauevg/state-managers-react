@@ -1,11 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import { observable, action, makeObservable } from "mobx";
 import listItems from "../common/listItems";
 
-function List() {
-    const [items, setItems] = useState([]);
+class Store {
+    @observable items = [];
 
+    constructor() {
+        makeObservable(this);
+    }
+
+    @action setItems(items) {
+        this.items = items;
+    }
+}
+
+const store = new Store();
+
+function List(props) {
     function addAll() {
-        setItems(listItems)
+        store.setItems(listItems)
     }
 
     return (
