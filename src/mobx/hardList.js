@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import { observer } from 'mobx-react';
-import listItems from "../common/listItems";
-
+import hardListItems from "../common/hardListItems";
+import fibonacci from "../common/fibonacci";
 
 class Store {
     items = [];
@@ -24,8 +24,11 @@ function List() {
     function addAll() {
         let allItems = [];
 
-        for (let item of listItems) {
-            allItems = allItems.concat([item]);
+        for (let item of hardListItems) {
+            allItems = allItems.concat({
+                i: allItems.length,
+                fibonacci: fibonacci(item.fibonacci_i)
+            });
             store.setItems(allItems);
         }
     }
@@ -35,7 +38,7 @@ function List() {
             <button onClick={addAll}>Start</button>
             <ul>
                 {store.getItems.map(item => (
-                    <li key={item}>{item}</li>
+                    <li key={item.i}>The {item.i}th Fibonacci number is {item.fibonacci}</li>
                 ))}
             </ul>
         </div>

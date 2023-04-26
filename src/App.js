@@ -9,6 +9,8 @@ function App() {
     let [selectedType, updateType] = React.useState('hook');
     const [currentComponent, updateState] = React.useState();
     function renderComponent(type, name, size = 0) {
+        resetComponent();
+
         updateState(<TestRenderer componentType={type} componentName={name} size={size}/>)
     }
 
@@ -34,24 +36,24 @@ function App() {
               <button onClick={ () => renderComponent(selectedType, 'list') }>
                   Рендеринг списка
               </button>
-              <button onClick={ () => renderComponent(selectedType, 'listWithData') }>
+              <button onClick={ () => renderComponent(selectedType, 'hardList') }>
                   Рендеринг списка и одновременная обработка большого объема данных
               </button>
-              <button onClick={ () => renderComponent(selectedType, 'matrix') }>
+              <button onClick={ () => renderComponent(selectedType, 'matrix', 20) }>
                   Рендеринг матрицы 20x20
               </button>
-              <button>
+              <button onClick={ () => renderComponent(selectedType, 'matrix', 100) }>
                   Рендеринг матрицы 100x100
               </button>
-              <button>
-                  Рендеринг матрицы 100x100
+              <button onClick={ () => renderComponent(selectedType, 'matrix', 400) }>
+                  Рендеринг матрицы 400x400
               </button>
           </div>
           <div id="target">
               {currentComponent}
           </div>
       </div>
-      );
+    );
 }
 
 export default App;

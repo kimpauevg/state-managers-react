@@ -1,8 +1,8 @@
 import { createStore } from "redux";
-import listItems from "../common/listItems";
 import { useSelector, useDispatch, Provider } from "react-redux";
 import React from "react";
-
+import fibonacci from "../common/fibonacci";
+import hardListItems from "../common/hardListItems";
 
 
 const initialState = {
@@ -14,7 +14,10 @@ function listStore(state = initialState, action) {
         case "add":
             return {
                 ...state,
-                items: state.items.concat([action.item]),
+                items: state.items.concat([{
+                    i: state.items.length,
+                    fibonacci: fibonacci(action.item.fibonacci_i),
+                }]),
             };
         default:
             return state;
@@ -25,8 +28,8 @@ function ListView() {
     const items = useSelector((state) => state.items);
     const dispatch = useDispatch();
 
-    function addAll () {
-        for (let item of listItems) {
+    const addAll = () => {
+        for (let item of hardListItems) {
             dispatch({ type: "add", item: item });
         }
     }
@@ -36,7 +39,7 @@ function ListView() {
             <button onClick={addAll}>Start</button>
             <ul>
                 {items.map(item => (
-                    <li key={item}>{item}</li>
+                    <li key={item.i}>The {item.i}th Fibonacci number is {item.fibonacci}</li>
                 ))}
             </ul>
         </div>
