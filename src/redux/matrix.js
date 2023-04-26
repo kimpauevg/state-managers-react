@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {getMatrixElems, generateMatrixElems} from "../common/matrixElems";
 import { createStore } from "redux";
 import { useSelector, useDispatch, Provider } from "react-redux";

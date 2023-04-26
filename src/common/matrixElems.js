@@ -1,3 +1,4 @@
+import React from 'react';
 import colors from "./colors";
 
 function chunk(items, size) {
@@ -21,8 +22,6 @@ function chunk(items, size) {
 
     return chunks;
 }
-
-
 
 export function getMatrixElems(items, size) {
     if (items.length === 0) {

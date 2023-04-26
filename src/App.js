@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import testRenderer from "./common/TestRenderer";
 import TestRenderer from "./common/TestRenderer";
 
 

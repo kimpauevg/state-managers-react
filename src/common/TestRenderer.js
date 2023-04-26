@@ -33,9 +33,10 @@ const components = {
     redux: reduxComponents,
 }
 
-export default block => {
+function testRenderer(block) {
     // component does exist
     return React.createElement(components[block.componentType][block.componentName], {
         size: block.size,
     });
 }
+export default testRenderer;
