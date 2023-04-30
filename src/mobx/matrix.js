@@ -27,8 +27,6 @@ function Matrix(props) {
     }
 
     const MatrixView = observer(({ store }) => {
-
-
         return <div className="wrapper">
             <div>
                 <button onClick={addAll}>Start</button>

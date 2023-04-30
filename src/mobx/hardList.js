@@ -25,13 +25,15 @@ function List() {
     function addAll() {
         let allItems = [];
 
-        for (let item of hardListItems) {
-            allItems = allItems.concat({
-                i: allItems.length,
-                fibonacci: fibonacci(item.fibonacci_i)
-            });
+        Promise.all(hardListItems.map(async (item) => {
+            item.i = allItems.length;
+
+            allItems = allItems.concat(item);
+
             store.setItems(allItems);
-        }
+
+            console.log('The ' + item.i + ' fibonacci number is ' + fibonacci(item.fibonacci_i));
+        }));
     }
 
     const ListView = observer(({ store }) => (
@@ -39,7 +41,7 @@ function List() {
             <button onClick={addAll}>Start</button>
             <ul>
                 {store.getItems.map(item => (
-                    <li key={item.i}>The {item.i}th Fibonacci number is {item.fibonacci}</li>
+                    <li key={item.i}>Item #{item.i}</li>
                 ))}
             </ul>
         </div>

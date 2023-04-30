@@ -1,5 +1,5 @@
 let items = [];
-let total = 40;
+let total = 35
 
 while (items.length < total) {
     items.push({

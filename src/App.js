@@ -32,19 +32,19 @@ function App() {
           </div>
           <div>
               <button onClick={ () => renderComponent(selectedType, 'list') }>
-                  Рендеринг списка
+                  List
               </button>
               <button onClick={ () => renderComponent(selectedType, 'hardList') }>
-                  Рендеринг списка и одновременная обработка большого объема данных
+                  List with data
               </button>
               <button onClick={ () => renderComponent(selectedType, 'matrix', 20) }>
-                  Рендеринг матрицы 20x20
+                  Matrix 20x20
               </button>
               <button onClick={ () => renderComponent(selectedType, 'matrix', 100) }>
-                  Рендеринг матрицы 100x100
+                  Matrix 100x100
               </button>
               <button onClick={ () => renderComponent(selectedType, 'matrix', 400) }>
-                  Рендеринг матрицы 400x400
+                  Matrix 400x400
               </button>
           </div>
           <div id="target">
