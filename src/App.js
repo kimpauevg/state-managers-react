@@ -26,9 +26,10 @@ function App() {
       <div>
           <div>Selected type: {selectedType}</div>
           <div>
-              <button onClick={() => setComponentType('hook')}>Hook</button>
+              <button onClick={() => setComponentType('hook')}>React hooks</button>
               <button onClick={() => setComponentType('mobx')}>MobX</button>
               <button onClick={() => setComponentType('redux')}>Redux</button>
+              <button onClick={() => setComponentType('zustand')}>Zustand</button>
           </div>
           <div>
               <button onClick={ () => renderComponent(selectedType, 'list') }>
