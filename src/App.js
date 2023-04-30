@@ -30,6 +30,7 @@ function App () {
         <button onClick={() => setComponentType('redux')}>Redux</button>
         <button onClick={() => setComponentType('zustand')}>Zustand</button>
         <button onClick={() => setComponentType('effector')}>Effector</button>
+        <button onClick={() => setComponentType('storeon')}>Storeon</button>
       </div>
       <div>
         <button onClick={() => renderComponent(selectedType, 'list')}>

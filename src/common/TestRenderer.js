@@ -14,6 +14,9 @@ import ZustandHardList from '../zustand/hardList'
 import EffectorList from '../effector/list'
 import EffectorHardList from '../effector/hardList'
 import EffectorMatrix from '../effector/matrix'
+import StoreonList from '../storeon/list'
+import StoreonHardList from '../storeon/hardList'
+import StoreonMatrix from '../storeon/matrix'
 
 const hookComponents = {
   list: HookList,
@@ -45,12 +48,19 @@ const effectorComponents = {
   matrix: EffectorMatrix
 }
 
+const storeonComponents = {
+  list: StoreonList,
+  hardList: StoreonHardList,
+  matrix: StoreonMatrix
+}
+
 const components = {
   hook: hookComponents,
   mobx: mobxComponents,
   redux: reduxComponents,
   zustand: zustandComponents,
-  effector: effectorComponents
+  effector: effectorComponents,
+  storeon: storeonComponents
 }
 
 function testRenderer (block) {

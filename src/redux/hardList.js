@@ -10,7 +10,7 @@ const initialState = {
 
 function listStore (state = initialState, action) {
   switch (action.type) {
-    case 'set':
+    case 'add':
       return {
         ...state,
         items: state.items.concat(action.item)
@@ -28,7 +28,7 @@ function ListView () {
     Promise.all(hardListItems.map(async (item, index) => {
       item.i = index
 
-      dispatch({ type: 'set', item })
+      dispatch({ type: 'add', item })
 
       console.log('The ' + item.i + ' fibonacci number is ' + fibonacci(item.fibonacci_i))
     }))
