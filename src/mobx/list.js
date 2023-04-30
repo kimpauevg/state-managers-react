@@ -1,48 +1,48 @@
-import React from 'react';
-import { makeAutoObservable } from "mobx";
-import { observer } from 'mobx-react';
-import listItems from "../common/listItems";
-
+import React from 'react'
+import { makeAutoObservable } from 'mobx'
+import { observer } from 'mobx-react'
+import listItems from '../common/listItems'
 
 class Store {
-    items = [];
+  items = []
 
-    constructor() {
-        makeAutoObservable(this);
-    }
-    setItems(items) {
-        this.items = items;
-    }
+  constructor () {
+    makeAutoObservable(this)
+  }
 
-    get getItems() {
-        return this.items
-    }
+  setItems (items) {
+    this.items = items
+  }
+
+  get getItems () {
+    return this.items
+  }
 }
 
-const store = new Store();
+const store = new Store()
 
-function List() {
-    function addAll() {
-        let allItems = [];
+function List () {
+  function addAll () {
+    let allItems = []
 
-        for (let item of listItems) {
-            allItems = allItems.concat([item]);
-            store.setItems(allItems);
-        }
+    for (const item of listItems) {
+      allItems = allItems.concat([item])
+      store.setItems(allItems)
     }
+  }
 
-    const ListView = observer(({ store }) => (
-        <div className="wrapper">
-            <button onClick={addAll}>Start</button>
-            <ul>
-                {store.getItems.map(item => (
-                    <li key={item}>{item}</li>
-                ))}
-            </ul>
-        </div>
-    ));
+  const ListView = observer(({ store }) => (
+    <div className='wrapper'>
+      <button onClick={addAll}>Start</button>
+      <ul>
+        {store.getItems.map(item => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  ))
 
-    return <ListView store={store}/>;
+  return <ListView store={store} />
 }
 
 export default List

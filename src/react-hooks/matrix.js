@@ -1,20 +1,20 @@
 /* eslint-disable react/prop-types */
-import {getMatrixElems, generateMatrixElems} from "../common/matrixElems";
-import React, {useState} from "react";
+import { getMatrixElems, generateMatrixElems } from '../common/matrixElems'
+import React, { useState } from 'react'
 
-export default function Matrix(props) {
-    const [items, setItems] = useState([]);
+export default function Matrix (props) {
+  const [items, setItems] = useState([])
 
-    function addAll() {
-        setItems(generateMatrixElems(props.size));
-    }
+  function addAll () {
+    setItems(generateMatrixElems(props.size))
+  }
 
-    return (
-        <div className="wrapper">
-            <div>
-                <button onClick={addAll}>Start</button>
-            </div>
-            {getMatrixElems(items, props.size)}
-        </div>
-    );
+  return (
+    <div className='wrapper'>
+      <div>
+        <button onClick={addAll}>Start</button>
+      </div>
+      {getMatrixElems(items, props.size)}
+    </div>
+  )
 }

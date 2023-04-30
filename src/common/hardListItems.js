@@ -1,9 +1,9 @@
-let items = [];
-let total = 35
+const items = []
+const total = 35
 
 while (items.length < total) {
-    items.push({
-        fibonacci_i: items.length,
-    });
+  items.push({
+    fibonacci_i: items.length
+  })
 }
 export default items
