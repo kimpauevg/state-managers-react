@@ -1,16 +1,19 @@
 import React from 'react'
 import HookList from '../react-hooks/list'
-import MobxList from '../mobx/list'
-import ReduxList from '../redux/list'
-import ZustandList from '../zustand/list'
 import HookMatrix from '../react-hooks/matrix'
-import MobxMatrix from '../mobx/matrix'
-import ReduxMatrix from '../redux/matrix'
-import ZustandMatrix from '../zustand/matrix'
-import MobxHardList from '../mobx/hardList'
 import HookHardList from '../react-hooks/hardList'
+import MobxList from '../mobx/list'
+import MobxMatrix from '../mobx/matrix'
+import MobxHardList from '../mobx/hardList'
+import ReduxList from '../redux/list'
+import ReduxMatrix from '../redux/matrix'
 import ReduxHardList from '../redux/hardList'
+import ZustandList from '../zustand/list'
+import ZustandMatrix from '../zustand/matrix'
 import ZustandHardList from '../zustand/hardList'
+import EffectorList from '../effector/list'
+import EffectorHardList from '../effector/hardList'
+import EffectorMatrix from '../effector/matrix'
 
 const hookComponents = {
   list: HookList,
@@ -36,11 +39,18 @@ const zustandComponents = {
   matrix: ZustandMatrix
 }
 
+const effectorComponents = {
+  list: EffectorList,
+  hardList: EffectorHardList,
+  matrix: EffectorMatrix
+}
+
 const components = {
   hook: hookComponents,
   mobx: mobxComponents,
   redux: reduxComponents,
-  zustand: zustandComponents
+  zustand: zustandComponents,
+  effector: effectorComponents
 }
 
 function testRenderer (block) {

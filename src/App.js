@@ -29,6 +29,7 @@ function App () {
         <button onClick={() => setComponentType('mobx')}>MobX</button>
         <button onClick={() => setComponentType('redux')}>Redux</button>
         <button onClick={() => setComponentType('zustand')}>Zustand</button>
+        <button onClick={() => setComponentType('effector')}>Effector</button>
       </div>
       <div>
         <button onClick={() => renderComponent(selectedType, 'list')}>
